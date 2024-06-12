@@ -75,6 +75,8 @@ public class ButtonAction {
         Book selectedBook = bookListView.getSelectionModel().getSelectedItem();
         if (selectedBook != null) {
             AllBooksList.deleteBook(selectedBook);
+            ObservableList<Book> items = bookListView.getItems();
+            items.remove(selectedBook);
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
