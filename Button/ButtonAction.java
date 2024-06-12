@@ -65,7 +65,6 @@ public class ButtonAction {
                     genreDialog.setContentText("Enter book genre:");
                     genreDialog.showAndWait().ifPresent(genre -> {
                         AllBooksList.addBook(new Book(title, author, publicityYear, genre));
-                        //sortTitle();
                     });
                 });
             }); 
