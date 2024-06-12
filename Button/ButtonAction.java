@@ -85,10 +85,6 @@ public class ButtonAction {
         }
 
     }
-    
-    public static void sort() {
-
-    }
 
     public static void sortTitle() {
         Comparator<Book> comparator;
