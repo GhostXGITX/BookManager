@@ -39,16 +39,16 @@ public class BooksManagerApp extends Application {
         deleteButton.setOnAction(e -> ButtonAction.deleteButton(bookListView));
 
         Button sortTitle = new Button("Title");
-        sortTitle.setOnAction(e -> ButtonAction.sortTitle());
+        sortTitle.setOnAction(e -> ButtonAction.sortTitle(bookListView));
 
         Button sortAuthor = new Button("Author");
-        sortAuthor.setOnAction(e -> ButtonAction.sortAuthor());
+        sortAuthor.setOnAction(e -> ButtonAction.sortAuthor(bookListView));
 
         Button sortPublicityYear = new Button("Publicity Year");
-        sortPublicityYear.setOnAction(e -> ButtonAction.sortPublicityYear());
+        sortPublicityYear.setOnAction(e -> ButtonAction.sortPublicityYear(bookListView));
 
         Button sortGenre = new Button("Genre");
-        sortGenre.setOnAction(e -> ButtonAction.sortGenre());
+        sortGenre.setOnAction(e -> ButtonAction.sortGenre(bookListView));
 
 
         //Layout

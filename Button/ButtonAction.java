@@ -65,7 +65,7 @@ public class ButtonAction {
                     genreDialog.setContentText("Enter book genre:");
                     genreDialog.showAndWait().ifPresent(genre -> {
                         AllBooksList.addBook(new Book(title, author, publicityYear, genre));
-                        sortTitle();
+                        //sortTitle();
                     });
                 });
             }); 
@@ -86,27 +86,31 @@ public class ButtonAction {
 
     }
 
-    public static void sortTitle() {
+    public static void sortTitle(ListView<Book> bookListView) {
         Comparator<Book> comparator;
         comparator = Comparator.comparing(Book::getTitle);
-        FXCollections.sort(AllBooksList.getBooks(), comparator);
+        ObservableList<Book> items = bookListView.getItems();
+        FXCollections.sort(items, comparator);
     }
 
-    public static void sortAuthor() {
+    public static void sortAuthor(ListView<Book> bookListView) {
         Comparator<Book> comparator;
         comparator = Comparator.comparing(Book::getAuthor);
-        FXCollections.sort(AllBooksList.getBooks(), comparator);
+        ObservableList<Book> items = bookListView.getItems();
+        FXCollections.sort(items, comparator);
     }
 
-    public static void sortPublicityYear() {
+    public static void sortPublicityYear(ListView<Book> bookListView) {
         Comparator<Book> comparator;
         comparator = Comparator.comparing(Book::getPublicityYear);
-        FXCollections.sort(AllBooksList.getBooks(), comparator.reversed());
+        ObservableList<Book> items = bookListView.getItems();
+        FXCollections.sort(items, comparator.reversed());
     }
 
-    public static void sortGenre() {
+    public static void sortGenre(ListView<Book> bookListView) {
         Comparator<Book> comparator;
         comparator = Comparator.comparing(Book::getGenre);
-        FXCollections.sort(AllBooksList.getBooks(), comparator);
+        ObservableList<Book> items = bookListView.getItems();
+        FXCollections.sort(items, comparator);
     }
 }
